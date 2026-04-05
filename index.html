@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu Flujo de Caja — Branding Completo</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --verde: #1A7A5E;
+    --verde-claro: #D4EDE5;
+    --verde-oscuro: #0D4F3C;
+    --verde-mid: #4BC99A;
+    --naranja: #E8622A;
+    --naranja-claro: #FAEADA;
+    --crema: #F7F4EF;
+    --negro: #1C1C1A;
+    --gris: #6B6B67;
+    --gris-claro: #E8E5DF;
+    --gris-bg: #F2F0EB;
+    --blanco: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--crema);
+    color: var(--negro);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--negro);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-logomark {
+    width: 30px;
+    height: 30px;
+    background: var(--verde);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    color: #fff;
+  }
+  .nav-brand span { color: var(--verde-mid); }
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #fff; }
+
+  /* HERO */
+  .hero {
+    background: var(--negro);
+    padding: 6rem 2rem 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(26,122,94,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(75, 201, 154, 0.12);
+    color: var(--verde-mid);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    border: 1px solid rgba(75,201,154,0.25);
+    margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 60px);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 em {
+    color: var(--verde-mid);
+    font-style: italic;
+  }
+  .hero p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .hero-meta {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    text-align: center;
+  }
+  .hero-meta-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--verde-mid);
+  }
+  .hero-meta-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 2px;
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--gris-claro);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--verde);
+    background: var(--verde-claro);
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--negro);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-sub {
+    font-size: 15px;
+    color: var(--gris);
+    max-width: 560px;
+    line-height: 1.65;
+    margin-bottom: 2.5rem;
+  }
+
+  /* LOGO SECTION */
+  .logo-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 2rem;
+  }
+  .logo-box {
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .logo-box.light { background: var(--blanco); border: 1px solid var(--gris-claro); }
+  .logo-box.dark { background: var(--negro); }
+  .logo-box.green { background: var(--verde); }
+  .logo-box-label {
+    font-size: 11px;
+    color: var(--gris);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  .logo-box.dark .logo-box-label,
+  .logo-box.green .logo-box-label { color: rgba(255,255,255,0.4); }
+
+  .logomark {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logomark.on-light { background: var(--verde); }
+  .logomark.on-dark { background: rgba(75,201,154,0.2); }
+  .logomark.on-green { background: rgba(255,255,255,0.18); }
+
+  .brand-name { text-align: center; line-height: 1.2; }
+  .brand-tu { font-size: 12px; font-weight: 400; }
+  .brand-tu.dark { color: rgba(255,255,255,0.45); }
+  .brand-tu.light { color: var(--gris); }
+  .brand-tu.on-green { color: rgba(255,255,255,0.55); }
+  .brand-main { font-family: 'DM Serif Display', serif; font-size: 24px; }
+  .brand-main.on-light { color: var(--negro); }
+  .brand-main.on-light span { color: var(--verde); }
+  .brand-main.on-dark { color: #fff; }
+  .brand-main.on-dark span { color: var(--verde-mid); }
+  .brand-main.on-green { color: #fff; }
+  .brand-main.on-green span { color: rgba(255,255,255,0.75); }
+
+  /* LOGO ICON ELEMENT */
+  .logo-nota {
+    font-size: 12px;
+    color: var(--gris);
+    background: var(--gris-bg);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    line-height: 1.6;
+  }
+  .logo-nota strong { color: var(--negro); font-weight: 500; }
+
+  /* PALETTE */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+  }
+  .swatch { border-radius: 10px; overflow: hidden; }
+  .swatch-color { height: 72px; }
+  .swatch-info { padding: 10px; background: var(--blanco); }
+  .swatch-name { font-size: 12px; font-weight: 500; color: var(--negro); margin-bottom: 2px; }
+  .swatch-hex { font-size: 10px; color: var(--gris); font-family: 'DM Sans', monospace; }
+  .swatch-role { font-size: 10px; color: var(--verde); font-weight: 500; margin-top: 2px; }
+
+  /* TYPOGRAPHY */
+  .type-blocks { display: flex; flex-direction: column; gap: 2rem; }
+  .type-block { padding: 1.75rem; background: var(--blanco); border-radius: 12px; border: 1px solid var(--gris-claro); }
+  .type-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+  .type-tag { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--verde); background: var(--verde-claro); padding: 3px 10px; border-radius: 100px; }
+  .type-family { font-size: 12px; color: var(--gris); }
+  .type-sample-display { font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--negro); line-height: 1.15; }
+  .type-sample-display em { color: var(--verde); font-style: italic; }
+  .type-sample-body { font-size: 16px; color: var(--negro); line-height: 1.75; max-width: 560px; }
+  .type-sample-ui { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gris); }
+  .type-specs { display: flex; gap: 1.5rem; margin-top: 0.875rem; flex-wrap: wrap; }
+  .type-spec { font-size: 11px; color: var(--gris); }
+  .type-spec strong { color: var(--negro); font-weight: 500; }
+
+  /* VOZ */
+  .voz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 2rem; }
+  .voz-card { border-radius: 10px; padding: 1.25rem; }
+  .voz-card.si { background: var(--verde-claro); border: 1px solid rgba(26,122,94,0.15); }
+  .voz-card.no { background: var(--gris-bg); border: 1px solid var(--gris-claro); }
+  .voz-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.625rem; }
+  .voz-card.si .voz-label { color: var(--verde); }
+  .voz-card.no .voz-label { color: var(--gris); }
+  .voz-text { font-size: 14px; line-height: 1.6; }
+  .voz-card.si .voz-text { color: var(--verde-oscuro); }
+  .voz-card.no .voz-text { color: var(--gris); text-decoration: line-through; }
+
+  .atributos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .atributo { background: var(--blanco); border-radius: 10px; padding: 1.25rem 1rem; border: 1px solid var(--gris-claro); }
+  .atributo-nombre { font-size: 13px; font-weight: 500; color: var(--verde); margin-bottom: 0.375rem; }
+  .atributo-desc { font-size: 12px; color: var(--gris); line-height: 1.55; }
+
+  /* TAGLINES */
+  .taglines { display: flex; flex-direction: column; gap: 10px; }
+  .tagline { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 1.5rem; border-radius: 12px; border: 1px solid var(--gris-claro); background: var(--blanco); transition: transform 0.2s; }
+  .tagline:hover { transform: translateX(4px); }
+  .tagline.principal { background: var(--verde); border-color: var(--verde); }
+  .tagline-num { font-size: 12px; font-weight: 500; color: var(--gris); min-width: 22px; padding-top: 3px; }
+  .tagline.principal .tagline-num { color: rgba(255,255,255,0.45); }
+  .tagline-content {}
+  .tagline-text { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--negro); line-height: 1.3; margin-bottom: 4px; }
+  .tagline.principal .tagline-text { color: #fff; }
+  .tagline-uso { font-size: 11px; color: var(--gris); font-weight: 400; }
+  .tagline.principal .tagline-uso { color: rgba(255,255,255,0.55); }
+
+  /* PILARES */
+  .pilares { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .pilar {
+    background: var(--blanco);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--gris-claro);
+    transition: box-shadow 0.2s;
+  }
+  .pilar:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+  .pilar-num { font-size: 11px; font-weight: 600; color: var(--verde); letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+  .pilar-nombre { font-size: 15px; font-weight: 500; color: var(--negro); margin-bottom: 0.5rem; }
+  .pilar-desc { font-size: 13px; color: var(--gris); line-height: 1.6; margin-bottom: 1rem; }
+  .pilar-divider { height: 1px; background: var(--gris-claro); margin-bottom: 0.875rem; }
+  .pilar-ejemplo { font-size: 12px; color: var(--gris); line-height: 1.7; display: flex; align-items: flex-start; gap: 6px; }
+  .pilar-ejemplo::before { content: "→"; color: var(--verde); flex-shrink: 0; margin-top: 1px; }
+  .pilar-ejemplos { display: flex; flex-direction: column; gap: 2px; }
+
+  /* BIOS */
+  .bios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .bio-device {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--gris-claro);
+    background: var(--blanco);
+  }
+  .bio-device-header {
+    background: var(--gris-bg);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--gris-claro);
+  }
+  .bio-device-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .bio-device-platform { font-size: 11px; font-weight: 500; color: var(--gris); margin-left: auto; letter-spacing: 0.05em; }
+  .bio-inner { padding: 1.25rem; }
+  .bio-profile { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+  .bio-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .bio-info-name { font-size: 14px; font-weight: 500; color: var(--negro); }
+  .bio-info-handle { font-size: 12px; color: var(--gris); }
+  .bio-text { font-size: 13px; color: var(--negro); line-height: 1.75; }
+  .bio-link { font-size: 13px; color: var(--verde); font-weight: 500; margin-top: 0.625rem; }
+
+  /* PÁGINA DE VENTAS */
+  .lp-wrapper { border-radius: 16px; overflow: hidden; border: 1px solid var(--gris-claro); }
+  .lp-hero {
+    background: var(--negro);
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .lp-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(26,122,94,0.12);
+    pointer-events: none;
+  }
+  .lp-badge-hero {
+    display: inline-block;
+    background: rgba(75,201,154,0.12);
+    color: var(--verde-mid);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(75,201,154,0.2);
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.06em;
+  }
+  .lp-h1 { font-family: 'DM Serif Display', serif; font-size: 34px; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
+  .lp-h1 em { color: var(--verde-mid); font-style: italic; }
+  .lp-sub { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 460px; margin-bottom: 2rem; }
+  .lp-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--naranja);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 26px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .lp-cta-btn:hover { opacity: 0.9; }
+  .lp-price-note { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 0.75rem; }
+
+  .lp-body { padding: 2rem 2.5rem; background: var(--blanco); }
+  .lp-section-h { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--verde); margin-bottom: 1.25rem; }
+  .lp-features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 2rem; }
+  .lp-feature { display: flex; align-items: flex-start; gap: 10px; }
+  .lp-check { width: 20px; height: 20px; background: var(--verde-claro); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .lp-feature-text { font-size: 14px; color: var(--negro); line-height: 1.5; }
+  .lp-testimonial {
+    background: var(--crema);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--verde);
+    margin-bottom: 2rem;
+  }
+  .lp-testimonial-text { font-size: 14px; color: var(--negro); line-height: 1.7; font-style: italic; margin-bottom: 0.625rem; }
+  .lp-testimonial-author { font-size: 12px; color: var(--gris); font-weight: 500; }
+
+  .lp-estructura { background: var(--crema); border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem; }
+  .lp-estructura-title { font-size: 14px; font-weight: 500; color: var(--negro); margin-bottom: 1rem; }
+  .lp-secciones { display: flex; flex-direction: column; gap: 8px; }
+  .lp-seccion { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: var(--blanco); border-radius: 8px; border: 1px solid var(--gris-claro); }
+  .lp-seccion-num { width: 24px; height: 24px; background: var(--verde); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: #fff; flex-shrink: 0; }
+  .lp-seccion-name { font-size: 13px; color: var(--negro); font-weight: 400; }
+  .lp-seccion-role { font-size: 11px; color: var(--gris); margin-left: auto; }
+
+  /* FEED VISUAL */
+  .feed-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .feed-post { aspect-ratio: 1; border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+  .feed-post-tag { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .feed-post-title { font-family: 'DM Serif Display', serif; font-size: 14px; line-height: 1.3; }
+  .feed-bars { position: absolute; top: 12px; left: 12px; display: flex; align-items: flex-end; gap: 3px; height: 32px; }
+  .feed-bar { width: 6px; border-radius: 2px 2px 0 0; }
+  .feed-dot { position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 15px; }
+
+  .p-verde { background: var(--verde); }
+  .p-negro { background: var(--negro); }
+  .p-crema { background: var(--crema); border: 1px solid var(--gris-claro); }
+  .p-naranja { background: var(--naranja); }
+  .p-verde-claro { background: var(--verde-claro); }
+  .p-gris { background: var(--gris-claro); }
+
+  /* ALERTA */
+  .alerta-critica {
+    background: #FFF4EE;
+    border: 1px solid rgba(232, 98, 42, 0.3);
+    border-left: 4px solid var(--naranja);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .alerta-titulo { font-size: 13px; font-weight: 500; color: var(--naranja); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 6px; }
+  .alerta-body { font-size: 14px; color: var(--negro); line-height: 1.65; }
+  .alerta-body strong { font-weight: 500; color: var(--naranja); }
+
+  /* FOOTER */
+  footer {
+    background: var(--negro);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .footer-logo { font-family: 'DM Serif Display', serif; font-size: 22px; color: #fff; margin-bottom: 0.5rem; }
+  .footer-logo span { color: var(--verde-mid); }
+  .footer-sub { font-size: 13px; color: rgba(255,255,255,0.35); }
+  .footer-domain { font-size: 13px; color: var(--verde-mid); margin-top: 0.5rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    .logo-showcase { grid-template-columns: 1fr; }
+    .palette-grid { grid-template-columns: repeat(3, 1fr); }
+    .voz-grid { grid-template-columns: 1fr; }
+    .atributos { grid-template-columns: repeat(2, 1fr); }
+    .pilares { grid-template-columns: 1fr 1fr; }
+    .bios-grid { grid-template-columns: 1fr; }
+    .feed-grid { grid-template-columns: repeat(3, 1fr); }
+    .lp-features { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logomark">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <rect x="1" y="11" width="3" height="6" rx="1" fill="rgba(255,255,255,0.35)"/>
+        <rect x="6" y="7" width="3" height="10" rx="1" fill="rgba(255,255,255,0.6)"/>
+        <rect x="11" y="3" width="3" height="14" rx="1" fill="#fff"/>
+        <path d="M1.5 7 L6.5 3.5 L11.5 1.5 L15 1" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="15" cy="1" r="1.5" fill="#fff"/>
+      </svg>
+    </div>
+    <div class="nav-brand">Tu Flujo de <span>Caja</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#identidad">Identidad</a></li>
+    <li><a href="#paleta">Paleta</a></li>
+    <li><a href="#tipografia">Tipografía</a></li>
+    <li><a href="#voz">Voz</a></li>
+    <li><a href="#taglines">Taglines</a></li>
+    <li><a href="#contenido">Contenido</a></li>
+    <li><a href="#redes">Redes</a></li>
+    <li><a href="#landingpage">Landing</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Branding Completo · tuflujodecaja.com</div>
+  <h1>Tu negocio,<br><em>bajo control.</em></h1>
+  <p>Guía de identidad visual, voz de marca, pilares de contenido y estructura de página de ventas para Tu Flujo de Caja.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="hero-meta-value">$9</div>
+      <div class="hero-meta-label">Precio del producto</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-value">$5K</div>
+      <div class="hero-meta-label">Meta mensual USD</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-value">556</div>
+      <div class="hero-meta-label">Ventas para la meta</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-value">MX + LATAM</div>
+      <div class="hero-meta-label">Mercado objetivo</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- IDENTIDAD -->
+  <div class="section" id="identidad">
+    <div class="section-tag">01 · Logo e Identidad Visual</div>
+    <div class="section-title">El logo y sus variantes</div>
+    <div class="section-sub">El logomark es una gráfica de barras ascendentes con una línea de tendencia — representa crecimiento bajo control. Tres versiones para cualquier fondo.</div>
+
+    <div class="logo-showcase">
+      <!-- Fondo claro -->
+      <div class="logo-box light">
+        <div class="logomark on-light">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <rect x="2" y="20" width="5" height="10" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+            <rect x="10" y="13" width="5" height="17" rx="1.5" fill="rgba(255,255,255,0.7)"/>
+            <rect x="18" y="5" width="5" height="25" rx="1.5" fill="#fff"/>
+            <path d="M2.5 12 L10.5 7 L18.5 3 L25 1" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="25" cy="1" r="2" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="brand-name">
+          <div class="brand-tu light">Tu</div>
+          <div class="brand-main on-light">Flujo de <span>Caja</span></div>
+        </div>
+        <div class="logo-box-label">Versión principal · fondo claro</div>
+      </div>
+
+      <!-- Fondo oscuro -->
+      <div class="logo-box dark">
+        <div class="logomark on-dark">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <rect x="2" y="20" width="5" height="10" rx="1.5" fill="rgba(75,201,154,0.2)"/>
+            <rect x="10" y="13" width="5" height="17" rx="1.5" fill="rgba(75,201,154,0.45)"/>
+            <rect x="18" y="5" width="5" height="25" rx="1.5" fill="#4BC99A"/>
+            <path d="M2.5 12 L10.5 7 L18.5 3 L25 1" stroke="rgba(75,201,154,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="25" cy="1" r="2" fill="#4BC99A"/>
+          </svg>
+        </div>
+        <div class="brand-name">
+          <div class="brand-tu dark">Tu</div>
+          <div class="brand-main on-dark">Flujo de <span>Caja</span></div>
+        </div>
+        <div class="logo-box-label">Versión oscura · redes / ads nocturnos</div>
+      </div>
+
+      <!-- Fondo verde -->
+      <div class="logo-box green">
+        <div class="logomark on-green">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <rect x="2" y="20" width="5" height="10" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+            <rect x="10" y="13" width="5" height="17" rx="1.5" fill="rgba(255,255,255,0.45)"/>
+            <rect x="18" y="5" width="5" height="25" rx="1.5" fill="#fff"/>
+            <path d="M2.5 12 L10.5 7 L18.5 3 L25 1" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="25" cy="1" r="2" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="brand-name">
+          <div class="brand-tu on-green">Tu</div>
+          <div class="brand-main on-green">Flujo de <span>Caja</span></div>
+        </div>
+        <div class="logo-box-label">Versión verde · bio / cabecera web</div>
+      </div>
+    </div>
+
+    <div class="logo-nota">
+      <strong>Tipografía del logo:</strong> "Tu" en DM Sans 400 (pequeño, discreto) · "Flujo de Caja" en DM Serif Display. La palabra "Caja" siempre en verde #1A7A5E en fondo claro, en #4BC99A en fondos oscuros. El logomark puede usarse solo como ícono de perfil / favicon.
+    </div>
+  </div>
+
+  <!-- PALETA -->
+  <div class="section" id="paleta">
+    <div class="section-tag">02 · Paleta de Colores</div>
+    <div class="section-title">6 colores. Sin ambigüedad.</div>
+    <div class="section-sub">Verde como color dominante de confianza y control. Naranja exclusivamente para calls-to-action. Negro para densidad y peso. Crema para fondos cálidos.</div>
+
+    <div class="palette-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1A7A5E;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Verde control</div>
+          <div class="swatch-hex">#1A7A5E</div>
+          <div class="swatch-role">Color principal</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0D4F3C;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Verde profundo</div>
+          <div class="swatch-hex">#0D4F3C</div>
+          <div class="swatch-role">Hover / oscuro</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#D4EDE5; border: 1px solid #c0ddd6;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Verde niebla</div>
+          <div class="swatch-hex">#D4EDE5</div>
+          <div class="swatch-role">Fondos / tags</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#E8622A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Naranja acción</div>
+          <div class="swatch-hex">#E8622A</div>
+          <div class="swatch-role">CTA / urgencia</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1C1C1A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Casi negro</div>
+          <div class="swatch-hex">#1C1C1A</div>
+          <div class="swatch-role">Texto / fondo hero</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F7F4EF; border: 1px solid #e8e5df;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Crema fondo</div>
+          <div class="swatch-hex">#F7F4EF</div>
+          <div class="swatch-role">Background web</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIPOGRAFÍA -->
+  <div class="section" id="tipografia">
+    <div class="section-tag">03 · Tipografía</div>
+    <div class="section-title">Dos familias. Un sistema.</div>
+    <div class="section-sub">DM Serif Display para titulares con carácter y autoridad. DM Sans para todo lo demás — legible, limpio, moderno. Ambas gratuitas en Google Fonts.</div>
+
+    <div class="type-blocks">
+      <div class="type-block">
+        <div class="type-meta">
+          <span class="type-tag">Display</span>
+          <span class="type-family">DM Serif Display · Regular + Italic</span>
+        </div>
+        <div class="type-sample-display">Tu negocio,<br><em>bajo control.</em></div>
+        <div class="type-specs">
+          <div class="type-spec"><strong>Uso:</strong> Titulares, taglines, héroe de página</div>
+          <div class="type-spec"><strong>Tamaños:</strong> 28–60px</div>
+          <div class="type-spec"><strong>Italic en verde</strong> para énfasis emocional</div>
+        </div>
+      </div>
+
+      <div class="type-block">
+        <div class="type-meta">
+          <span class="type-tag">Cuerpo</span>
+          <span class="type-family">DM Sans · 400 Regular</span>
+        </div>
+        <div class="type-sample-body">Saber exactamente cuánto entra, cuánto sale y cuánto te queda no es lujo. Es lo mínimo que tu negocio necesita para sobrevivir y crecer. Esta plantilla lo hace simple.</div>
+        <div class="type-specs">
+          <div class="type-spec"><strong>Uso:</strong> Párrafos, captions, subtítulos</div>
+          <div class="type-spec"><strong>Tamaño:</strong> 14–16px · Line-height: 1.7</div>
+        </div>
+      </div>
+
+      <div class="type-block">
+        <div class="type-meta">
+          <span class="type-tag">UI / Etiquetas</span>
+          <span class="type-family">DM Sans · 500 Medium · Uppercase</span>
+        </div>
+        <div class="type-sample-ui">Control financiero · Flujo de caja · Pymes · México · Latam</div>
+        <div class="type-specs">
+          <div class="type-spec"><strong>Uso:</strong> Tags, labels, badges, categorías</div>
+          <div class="type-spec"><strong>Tamaño:</strong> 10–12px · Letter-spacing: 0.1em</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOZ -->
+  <div class="section" id="voz">
+    <div class="section-tag">04 · Voz y Tono de Marca</div>
+    <div class="section-title">Hablar como el amigo que sí sabe.</div>
+    <div class="section-sub">El tono es el de alguien que vivió el problema, encontró la solución y quiere compartirla. Sin tecnicismos, sin superioridad, sin corporativo.</div>
+
+    <div class="voz-grid">
+      <div class="voz-card si">
+        <div class="voz-label">✓ Sí decimos</div>
+        <div class="voz-text">"Saber cuánto tienes en caja hoy no debería ser una adivinanza."</div>
+      </div>
+      <div class="voz-card no">
+        <div class="voz-label">✕ No decimos</div>
+        <div class="voz-text">"Optimiza tu liquidez con herramientas de gestión financiera avanzada."</div>
+      </div>
+      <div class="voz-card si">
+        <div class="voz-label">✓ Sí decimos</div>
+        <div class="voz-text">"La hicimos porque nosotros mismos la necesitábamos."</div>
+      </div>
+      <div class="voz-card no">
+        <div class="voz-label">✕ No decimos</div>
+        <div class="voz-text">"Solución integral para el monitoreo del cash flow empresarial."</div>
+      </div>
+      <div class="voz-card si">
+        <div class="voz-label">✓ Sí decimos</div>
+        <div class="voz-text">"Si no sabes cuánto te queda al final del mes, tu negocio está en riesgo."</div>
+      </div>
+      <div class="voz-card no">
+        <div class="voz-label">✕ No decimos</div>
+        <div class="voz-text">"Descubre el potencial de tu empresa con nuestras soluciones contables."</div>
+      </div>
+      <div class="voz-card si">
+        <div class="voz-label">✓ Sí decimos</div>
+        <div class="voz-text">"Los negocios no quiebran por falta de ventas. Quiebran por falta de control."</div>
+      </div>
+      <div class="voz-card no">
+        <div class="voz-label">✕ No decimos</div>
+        <div class="voz-text">"Impulsa la rentabilidad de tu empresa con nuestro sistema de análisis financiero."</div>
+      </div>
+    </div>
+
+    <div class="atributos">
+      <div class="atributo">
+        <div class="atributo-nombre">Directo</div>
+        <div class="atributo-desc">Sin rodeos. El punto primero, la explicación después.</div>
+      </div>
+      <div class="atributo">
+        <div class="atributo-nombre">Cercano</div>
+        <div class="atributo-desc">Como el amigo que ya resolvió el problema y te lo cuenta.</div>
+      </div>
+      <div class="atributo">
+        <div class="atributo-nombre">Real</div>
+        <div class="atributo-desc">Historias reales, dolores reales, resultados reales.</div>
+      </div>
+      <div class="atributo">
+        <div class="atributo-nombre">Empoderador</div>
+        <div class="atributo-desc">Tú puedes controlar esto. No necesitas ser contador.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAGLINES -->
+  <div class="section" id="taglines">
+    <div class="section-tag">05 · Taglines</div>
+    <div class="section-title">Del más fuerte al más suave.</div>
+    <div class="section-sub">La tagline principal va en el logo, bio y web. Las demás se usan según el contexto y el momento del funnel donde está el comprador.</div>
+
+    <div class="taglines">
+      <div class="tagline principal">
+        <div class="tagline-num">01</div>
+        <div class="tagline-content">
+          <div class="tagline-text">Tu negocio, bajo control.</div>
+          <div class="tagline-uso">Principal · Logo + bio + cabecera web + perfil de redes</div>
+        </div>
+      </div>
+      <div class="tagline">
+        <div class="tagline-num">02</div>
+        <div class="tagline-content">
+          <div class="tagline-text">Deja de adivinar. Empieza a saber.</div>
+          <div class="tagline-uso">Ads · Posts de dolor · Héroe de página de ventas · Hook de Reel</div>
+        </div>
+      </div>
+      <div class="tagline">
+        <div class="tagline-num">03</div>
+        <div class="tagline-content">
+          <div class="tagline-text">Los negocios no quiebran por falta de ventas. Quiebran por falta de control.</div>
+          <div class="tagline-uso">Contenido educativo · Introducción de videos · Página de ventas · Email</div>
+        </div>
+      </div>
+      <div class="tagline">
+        <div class="tagline-num">04</div>
+        <div class="tagline-content">
+          <div class="tagline-text">La herramienta que todo dueño de negocio necesitaba y nadie le enseñó a usar.</div>
+          <div class="tagline-uso">Storytelling · Caption largo · Email de bienvenida · Lanzamiento</div>
+        </div>
+      </div>
+      <div class="tagline">
+        <div class="tagline-num">05</div>
+        <div class="tagline-content">
+          <div class="tagline-text">Control financiero para restaurantes, tiendas y salones. Sin ser contador.</div>
+          <div class="tagline-uso">Ads segmentados · Descripción de producto · SEO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PILARES DE CONTENIDO -->
+  <div class="section" id="contenido">
+    <div class="section-tag">06 · Pilares de Contenido</div>
+    <div class="section-title">6 pilares. Infinito contenido.</div>
+    <div class="section-sub">Cada pilar responde a un estado mental diferente del comprador. La mezcla semanal recomendada: 2 dolor + 2 solución + 1 historia + 1 educación + 1 conversión.</div>
+
+    <div class="pilares">
+      <div class="pilar">
+        <div class="pilar-num">Pilar 01</div>
+        <div class="pilar-nombre">El dolor</div>
+        <div class="pilar-desc">Nombra el problema que tienen pero no saben articular. Máximo engagement.</div>
+        <div class="pilar-divider"></div>
+        <div class="pilar-ejemplos">
+          <div class="pilar-ejemplo">¿Por qué vendes mucho y siempre te falta dinero?</div>
+          <div class="pilar-ejemplo">3 señales de que tu negocio va a quebrar (aunque vendas)</div>
+          <div class="pilar-ejemplo">La diferencia entre ganancia y efectivo</div>
+        </div>
+      </div>
+      <div class="pilar">
+        <div class="pilar-num">Pilar 02</div>
+        <div class="pilar-nombre">La solución</div>
+        <div class="pilar-desc">Tutorial, demo real de la pantalla. Que vean la plantilla trabajando.</div>
+        <div class="pilar-divider"></div>
+        <div class="pilar-ejemplos">
+          <div class="pilar-ejemplo">Así registro mis ventas en 2 minutos al día</div>
+          <div class="pilar-ejemplo">Mi dashboard de flujo de caja (pantalla real)</div>
+          <div class="pilar-ejemplo">Cómo saber cuánto tengo en caja ahora mismo</div>
+        </div>
+      </div>
+      <div class="pilar">
+        <div class="pilar-num">Pilar 03</div>
+        <div class="pilar-nombre">La historia</div>
+        <div class="pilar-desc">Testimonios, origen de la plantilla, el caso de Vitto & Giulio.</div>
+        <div class="pilar-divider"></div>
+        <div class="pilar-ejemplos">
+          <div class="pilar-ejemplo">Así salvamos la pizzería con esta plantilla</div>
+          <div class="pilar-ejemplo">De estar perdido a tener control total en una semana</div>
+          <div class="pilar-ejemplo">Por qué creé esto estando estudiando en EE.UU.</div>
+        </div>
+      </div>
+      <div class="pilar">
+        <div class="pilar-num">Pilar 04</div>
+        <div class="pilar-nombre">Educación</div>
+        <div class="pilar-desc">Tips rápidos de finanzas para no financieros. Posiciona como autoridad.</div>
+        <div class="pilar-divider"></div>
+        <div class="pilar-ejemplos">
+          <div class="pilar-ejemplo">Qué es el flujo de caja en palabras simples</div>
+          <div class="pilar-ejemplo">Costos fijos vs variables: la diferencia que importa</div>
+          <div class="pilar-ejemplo">Cómo saber si tu negocio es rentable de verdad</div>
+        </div>
+      </div>
+      <div class="pilar">
+        <div class="pilar-num">Pilar 05</div>
+        <div class="pilar-nombre">Conversión</div>
+        <div class="pilar-desc">Directo a la venta. Escaso. Urgente. Real. Máximo 1 de cada 7 posts.</div>
+        <div class="pilar-divider"></div>
+        <div class="pilar-ejemplos">
+          <div class="pilar-ejemplo">Por $9 USD tienes control total de tu caja</div>
+          <div class="pilar-ejemplo">Esto incluye la plantilla (demo en video)</div>
+          <div class="pilar-ejemplo">Precio de lanzamiento solo esta semana</div>
+        </div>
+      </div>
+      <div class="pilar">
+        <div class="pilar-num">Pilar 06</div>
+        <div class="pilar-nombre">Comunidad</div>
+        <div class="pilar-desc">Preguntas, encuestas, UGC. Construye audiencia participativa.</div>
+        <div class="pilar-divider"></div>
+        <div class="pilar-ejemplos">
+          <div class="pilar-ejemplo">¿Cuánto tardas en saber tu saldo real hoy?</div>
+          <div class="pilar-ejemplo">¿En qué tipo de negocio usas la plantilla?</div>
+          <div class="pilar-ejemplo">¿Cuánto llevas de ventas este mes? Comenta</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIOS DE REDES -->
+  <div class="section" id="redes">
+    <div class="section-tag">07 · Bios y Redes Sociales</div>
+    <div class="section-title">Presencia lista para publicar.</div>
+    <div class="section-sub">Bio optimizada para cada plataforma. Instagram permite más texto y emojis estratégicos. TikTok requiere brevedad total — 3 líneas máximo.</div>
+
+    <div class="bios-grid">
+      <div class="bio-device">
+        <div class="bio-device-header">
+          <div class="bio-device-dot" style="background:#FF5F57;"></div>
+          <div class="bio-device-dot" style="background:#FFBD2E;"></div>
+          <div class="bio-device-dot" style="background:#28C840;"></div>
+          <div class="bio-device-platform">Instagram · @tuflujodecaja</div>
+        </div>
+        <div class="bio-inner">
+          <div class="bio-profile">
+            <div class="bio-avatar">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <rect x="2" y="15" width="5" height="9" rx="1.5" fill="rgba(255,255,255,0.4)"/>
+                <rect x="9" y="10" width="5" height="14" rx="1.5" fill="rgba(255,255,255,0.65)"/>
+                <rect x="16" y="4" width="5" height="20" rx="1.5" fill="#fff"/>
+                <path d="M3 10 L10 5.5 L17 2.5 L22 1" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="22" cy="1" r="2" fill="#fff"/>
+              </svg>
+            </div>
+            <div>
+              <div class="bio-info-name">Tu Flujo de Caja</div>
+              <div class="bio-info-handle">Control financiero para pymes</div>
+            </div>
+          </div>
+          <div class="bio-text">
+            📊 La plantilla que mantiene tu negocio bajo control<br>
+            💸 Saber cuánto entra, cuánto sale y cuánto te queda<br>
+            🇲🇽 Hecha por dueños de negocio, para dueños de negocio<br>
+            ✅ Funciona en Excel y Google Sheets<br>
+            👇 Descarga la plantilla — $9 USD
+          </div>
+          <div class="bio-link">🔗 tuflujodecaja.com</div>
+        </div>
+      </div>
+
+      <div class="bio-device">
+        <div class="bio-device-header">
+          <div class="bio-device-dot" style="background:#FF5F57;"></div>
+          <div class="bio-device-dot" style="background:#FFBD2E;"></div>
+          <div class="bio-device-dot" style="background:#28C840;"></div>
+          <div class="bio-device-platform">TikTok · @tuflujodecaja</div>
+        </div>
+        <div class="bio-inner">
+          <div class="bio-profile">
+            <div class="bio-avatar">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+                <rect x="2" y="15" width="5" height="9" rx="1.5" fill="rgba(255,255,255,0.4)"/>
+                <rect x="9" y="10" width="5" height="14" rx="1.5" fill="rgba(255,255,255,0.65)"/>
+                <rect x="16" y="4" width="5" height="20" rx="1.5" fill="#fff"/>
+                <path d="M3 10 L10 5.5 L17 2.5 L22 1" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="22" cy="1" r="2" fill="#fff"/>
+              </svg>
+            </div>
+            <div>
+              <div class="bio-info-name">Tu Flujo de Caja</div>
+              <div class="bio-info-handle">Finanzas para tu negocio</div>
+            </div>
+          </div>
+          <div class="bio-text">
+            Finanzas simples para dueños de negocio 📊<br>
+            Sin contadores. Sin complicaciones.<br>
+            Descarga la plantilla 👇
+          </div>
+          <div class="bio-link">🔗 tuflujodecaja.com</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estilo de feed -->
+    <div style="margin-top: 2.5rem;">
+      <div style="font-size: 14px; font-weight: 500; color: var(--negro); margin-bottom: 0.5rem;">Patrón de alternancia del feed · Instagram</div>
+      <div style="font-size: 13px; color: var(--gris); margin-bottom: 1.25rem;">Verde oscuro → Crema → Negro → Verde claro → Naranja (solo CTA) → Gris. El naranja aparece máximo 1 de cada 6 posts.</div>
+      <div class="feed-grid">
+        <div class="feed-post p-verde">
+          <div class="feed-bars">
+            <div class="feed-bar" style="height:35%; background:rgba(255,255,255,0.2);"></div>
+            <div class="feed-bar" style="height:60%; background:rgba(255,255,255,0.3);"></div>
+            <div class="feed-bar" style="height:48%; background:rgba(255,255,255,0.25);"></div>
+            <div class="feed-bar" style="height:80%; background:rgba(255,255,255,0.35);"></div>
+            <div class="feed-bar" style="height:65%; background:rgba(255,255,255,0.3);"></div>
+          </div>
+          <div class="feed-post-tag" style="color:rgba(255,255,255,0.55);">Educación</div>
+          <div class="feed-post-title" style="color:#fff;">¿Por qué vendes mucho y siempre te falta dinero?</div>
+        </div>
+        <div class="feed-post p-crema">
+          <div class="feed-dot" style="background:var(--verde-claro); color:var(--verde);">📊</div>
+          <div class="feed-post-tag" style="color:var(--gris);">Producto</div>
+          <div class="feed-post-title" style="color:var(--negro);">Así se ve tu negocio bajo control.</div>
+        </div>
+        <div class="feed-post p-negro">
+          <div class="feed-post-tag" style="color:rgba(255,255,255,0.45);">Dato</div>
+          <div class="feed-post-title" style="color:#4BC99A;">8 de cada 10 pymes quiebran por falta de control.</div>
+        </div>
+        <div class="feed-post p-verde-claro">
+          <div class="feed-post-tag" style="color:var(--verde-oscuro); opacity:0.7;">Historia</div>
+          <div class="feed-post-title" style="color:var(--verde-oscuro);">Así salvamos nuestra pizzería con esta plantilla.</div>
+        </div>
+        <div class="feed-post p-naranja">
+          <div class="feed-post-tag" style="color:rgba(255,255,255,0.7);">Oferta</div>
+          <div class="feed-post-title" style="color:#fff;">Todo tu flujo de caja por $9 USD.</div>
+        </div>
+        <div class="feed-post p-gris">
+          <div class="feed-post-tag" style="color:var(--gris);">Tip</div>
+          <div class="feed-post-title" style="color:var(--negro);">La diferencia entre ganancia y efectivo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PÁGINA DE VENTAS -->
+  <div class="section" id="landingpage">
+    <div class="section-tag">08 · Página de Ventas</div>
+    <div class="section-title">Estructura de tuflujodecaja.com</div>
+    <div class="section-sub">Wireframe de contenido con copywriting listo. El orden no es arbitrario: dolor → solución → prueba → acción.</div>
+
+    <div class="lp-wrapper">
+      <div class="lp-hero">
+        <div class="lp-badge-hero">Solo $9 USD · Descarga inmediata</div>
+        <div class="lp-h1">Deja de adivinar<br>cuánto tiene <em>tu negocio.</em></div>
+        <div class="lp-sub">La plantilla de flujo de caja que controla tus entradas, salidas y saldo real — sin ser contador y sin complicaciones.</div>
+        <a href="#" class="lp-cta-btn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 14h12" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Quiero mi plantilla — $9 USD
+        </a>
+        <div class="lp-price-note">Pago único · Sin suscripción · Acceso de por vida · Excel + Google Sheets</div>
+      </div>
+
+      <div class="lp-body">
+        <div class="lp-section-h">¿Para quién es?</div>
+        <div style="font-size:14px; color:var(--negro); line-height:1.7; margin-bottom:1.5rem;">Diseñada para dueños de <strong>restaurantes, cafeterías, tiendas de retail, salones de belleza y cualquier pyme</strong> que necesite saber exactamente cómo va su caja — sin depender de un contador ni de software caro.</div>
+
+        <div class="lp-section-h">¿Qué incluye?</div>
+        <div class="lp-features">
+          <div class="lp-feature">
+            <div class="lp-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A7A5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="lp-feature-text">Registro diario de entradas y salidas</div>
+          </div>
+          <div class="lp-feature">
+            <div class="lp-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A7A5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="lp-feature-text">Dashboard automático con saldo real</div>
+          </div>
+          <div class="lp-feature">
+            <div class="lp-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A7A5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="lp-feature-text">Flujo mensual y diario en una vista</div>
+          </div>
+          <div class="lp-feature">
+            <div class="lp-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A7A5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="lp-feature-text">Funciona en Excel y Google Sheets</div>
+          </div>
+          <div class="lp-feature">
+            <div class="lp-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A7A5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="lp-feature-text">Categorías personalizables por negocio</div>
+          </div>
+          <div class="lp-feature">
+            <div class="lp-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A7A5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="lp-feature-text">Compatible con cualquier moneda</div>
+          </div>
+          <div class="lp-feature">
+            <div class="lp-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A7A5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="lp-feature-text">Reporte de resultados mensual automático</div>
+          </div>
+          <div class="lp-feature">
+            <div class="lp-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A7A5E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="lp-feature-text">Maestro de cuentas y categorías personalizables</div>
+          </div>
+        </div>
+
+        <div class="lp-section-h">Lo que dice quien la usa</div>
+        <div class="lp-testimonial">
+          <div class="lp-testimonial-text">"Nunca había tenido tanta claridad sobre las finanzas de mi restaurante. Sé exactamente cuánto entra, cuánto gasto y cuánto me queda. Mi pizzería empezó a crecer de verdad — con control."</div>
+          <div class="lp-testimonial-author">Víctor Salinas · Dueño de Vitto & Giulio, São Paulo</div>
+        </div>
+
+        <div class="lp-estructura">
+          <div class="lp-estructura-title">Estructura completa de la página de ventas (orden recomendado)</div>
+          <div class="lp-secciones">
+            <div class="lp-seccion"><div class="lp-seccion-num">1</div><div class="lp-seccion-name">Hero con headline de dolor + CTA primario</div><div class="lp-seccion-role">Above the fold</div></div>
+            <div class="lp-seccion"><div class="lp-seccion-num">2</div><div class="lp-seccion-name">¿Para quién es? — segmentación del comprador</div><div class="lp-seccion-role">Filtrar</div></div>
+            <div class="lp-seccion"><div class="lp-seccion-num">3</div><div class="lp-seccion-name">El problema — agitar el dolor real</div><div class="lp-seccion-role">Conectar</div></div>
+            <div class="lp-seccion"><div class="lp-seccion-num">4</div><div class="lp-seccion-name">La solución — qué es y cómo funciona</div><div class="lp-seccion-role">Presentar</div></div>
+            <div class="lp-seccion"><div class="lp-seccion-num">5</div><div class="lp-seccion-name">Demo visual — screenshots del dashboard real</div><div class="lp-seccion-role">Mostrar</div></div>
+            <div class="lp-seccion"><div class="lp-seccion-num">6</div><div class="lp-seccion-name">¿Qué incluye? — lista de beneficios</div><div class="lp-seccion-role">Detallar</div></div>
+            <div class="lp-seccion"><div class="lp-seccion-num">7</div><div class="lp-seccion-name">Historia — origen de la plantilla (Vic + JP)</div><div class="lp-seccion-role">Confiar</div></div>
+            <div class="lp-seccion"><div class="lp-seccion-num">8</div><div class="lp-seccion-name">Testimonios reales</div><div class="lp-seccion-role">Probar</div></div>
+            <div class="lp-seccion"><div class="lp-seccion-num">9</div><div class="lp-seccion-name">Preguntas frecuentes</div><div class="lp-seccion-role">Eliminar objeciones</div></div>
+            <div class="lp-seccion"><div class="lp-seccion-num">10</div><div class="lp-seccion-name">CTA final con precio y urgencia</div><div class="lp-seccion-role">Convertir</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALERTA CRÍTICA -->
+    <div class="alerta-critica">
+      <div class="alerta-titulo">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2L14 13H2L8 2Z" stroke="#E8622A" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 6v3M8 11v1" stroke="#E8622A" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Acción urgente antes del lanzamiento
+      </div>
+      <div class="alerta-body">
+        La plantilla actual contiene <strong>texto en portugués</strong> (hoja "Instrucciones", términos como "Receitas do Mês", "Despesas do Año") y referencias a <strong>"Jaque Bennett Consultoria Financeira Ltda"</strong> con CNPJ brasileño. Antes de vender una sola copia, Juan Pablo debe: (1) traducir y adaptar todo al español neutro para LATAM, (2) eliminar cualquier referencia a la marca original, (3) revisar los términos de licencia de uso de la hoja original. Sin esto, hay riesgo legal y de credibilidad. El lanzamiento solo procede después de este paso.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Tu Flujo de <span>Caja</span></div>
+  <div class="footer-sub">Branding Completo · Versión 1.0 · Abril 2026</div>
+  <div class="footer-domain">tuflujodecaja.com</div>
+</footer>
+
+</body>
+</html>
